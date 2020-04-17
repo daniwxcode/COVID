@@ -180,6 +180,7 @@
                                  Spacing="0">
                         
                              <Label 
+                               x:Name="CasActifs"
                                TextColor="Orange"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"

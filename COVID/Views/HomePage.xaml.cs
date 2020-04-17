@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using COVID.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +14,11 @@ namespace COVID
     {
         public HomePage()
         {
-            InitializeComponent();
+              InitializeComponent();
+           
+            var stats =  Covid19TgService.GetAsync();
+            CasActifs.Text = "30".ToString();
+           
         }
     }
 }
