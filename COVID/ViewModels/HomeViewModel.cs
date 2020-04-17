@@ -14,12 +14,22 @@ namespace COVID.ViewModels
 
         async Task GetDetails()
         {
+            if(false){
             var stats = await Covid19TgService.GetDetailsAsync();
             CasActifs = stats.InfosduJour.ActiveCases.ToString();
             CasGueris = stats.InfosduJour.Cured.ToString();
             Deces = stats.InfosduJour.Deaths.ToString();
             CasConfirmes = stats.InfosduJour.Total.ToString();
         }
+            else
+            {
+                CasActifs = "30";
+                CasGueris = "48";
+                Deces ="5";
+                CasConfirmes="81"; 
+            }
+            
+            }
 
         private string _casactifs;
 
