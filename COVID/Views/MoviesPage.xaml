@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:customControls="clr-namespace:COVID.Controls"
+             xmlns:myplayer="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             ios:Page.UseSafeArea="True"
+             Title="Consignes"
+             x:Class="COVID.MoviesPage">
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Start"
+                         Spacing="0">
+
+                <yummy:PancakeView BackgroundGradientEndColor="#146c53"
+                               BackgroundGradientStartColor="#006A9A"
+                               BackgroundGradientAngle="90"
+                               Elevation="5"
+                               HeightRequest="60"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HasShadow="False">
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label Text="Le numero vert pour plus d'infos"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="15,0,0,0"
+                            HeightRequest="50"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalTextAlignment="Center"
+                            TextColor="White"/>
+
+
+                        <StackLayout Orientation="Horizontal"
+                                         HorizontalOptions="EndAndExpand">
+
+                            <ImageButton BackgroundColor="Transparent">
+                                <ImageButton.Source>
+                                    <FontImageSource  
+                                                Glyph="&#xF03F2;"
+                                                FontFamily="{DynamicResource MaterialFont}"
+                                                Size="20"
+                                                Color="White"/>
+                                </ImageButton.Source>
+
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Opacity"
+                                                Value="1" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Opacity"
+                                                Value="0.5" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+
+                            <Label Text="111"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="0,0,15,0"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"
+                            TextColor="White"/>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </yummy:PancakeView>
+
+                <yummy:PancakeView BackgroundColor="White"
+                               Elevation="5"
+                               HeightRequest="60"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HasShadow="True">
+
+                    <Label Text="Site d'information officiel du Gouvernement"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="15,0,0,0"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalTextAlignment="Center"
+                            TextColor="#D21B33"/>
+
+                </yummy:PancakeView>
+
+            </StackLayout>
+            <ScrollView Orientation="Vertical"
+                        Margin="0,-5,0,0"
+                        VerticalScrollBarVisibility="Never">
+                
+
+                <StackLayout Orientation="Vertical"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Spacing="20">
+
+                    <StackLayout Orientation="Vertical"
+                             Padding="15"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
+                                 Spacing="15">
+
+                        <StackLayout Orientation="Vertical"
+                             VerticalOptions="StartAndExpand"
+                             HorizontalOptions="FillAndExpand">
+
+                        <Label Text="Les gestes Barrières"
+                       TextColor="#146c53"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"/>
+
+                            <BoxView HorizontalOptions="CenterAndExpand" 
+                                    VerticalOptions="CenterAndExpand" 
+                                    WidthRequest="200" 
+                                    HeightRequest="2" 
+                                    Color="#D21B33"/>
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             Spacing="4">
+
+
+                        <Image Aspect="AspectFill"
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           Source="laverLesMains.png"/>
+
+
+                        <Label Text="Se laver les mains"
+                       TextColor="#006A9A"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                        <Label Text="régulièrement avec de l'eau et du savon, ou les désinfecter avec du gel hydroalcoolique"
+                       TextColor="#000000"
+                               HorizontalTextAlignment="Center"
+                        VerticalOptions="EndAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             Spacing="4">
+
+
+                        <Image Aspect="AspectFill"
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           Source="utilisermouchoir.png"/>
+
+
+                        <Label Text="Tousser et éternuer"
+                       TextColor="#006A9A"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                        <Label Text="dans un mouchoir ou dans le pli de son coude"
+                       TextColor="#000000"
+                        VerticalOptions="EndAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             Spacing="4">
+
+
+                        <Image Aspect="AspectFill"
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           Source="handshake.png"/>
+
+
+                        <Label Text="Saluer sans se toucher"
+                       TextColor="#006A9A"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                        <Label Text="sans se serrer la main et éviter les embrassades"
+                       TextColor="#000000"
+                        VerticalOptions="EndAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             Spacing="4">
+
+
+                        <Image Aspect="AspectFill"
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           Source="Eviterleendroitsavecbeaucoupdemonde.png"/>
+
+
+                        <Label Text="Rester à distance"
+                       TextColor="#006A9A"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                        <Label Text="d'au moins 1 mètre des autre"
+                       TextColor="#000000"
+                        VerticalOptions="EndAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             Spacing="4">
+
+
+                        <Image Aspect="AspectFill"
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           Source="Nepassetoucherlevisage.png"/>
+
+
+                        <Label Text="Ne pas se toucher"
+                       TextColor="#006A9A"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                        <Label Text="ni les yeux, le nez ou la bouche"
+                       TextColor="#000000"
+                        VerticalOptions="EndAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             Spacing="4">
+
+
+                        <Image Aspect="AspectFill"
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           Source="porterunmasque.png"/>
+
+
+                        <Label Text="Portez un masque"
+                       TextColor="#006A9A"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                        <Label Text="si vous avez des symptômes respiratoires"
+                       TextColor="#000000"
+                        VerticalOptions="EndAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+                  </StackLayout>
+                    
+                    
+                    <StackLayout Orientation="Vertical"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand">
+
+                        <StackLayout Orientation="Vertical"
+                             VerticalOptions="StartAndExpand"
+                             HorizontalOptions="FillAndExpand">
+
+                            <Label Text="Mesures de prévention"
+                                 TextColor="#146c53"
+                                 FontSize="Title"
+                                 FontAttributes="Bold"
+                                  VerticalOptions="CenterAndExpand" 
+                                  HorizontalOptions="CenterAndExpand"/>
+
+                            <BoxView HorizontalOptions="CenterAndExpand" 
+                                    VerticalOptions="CenterAndExpand" 
+                                    WidthRequest="250" 
+                                    HeightRequest="2" 
+                                    Color="#D21B33"/>
+
+                        </StackLayout>
+
+                        <StackLayout>
+
+                        <myplayer:VideoView x:Name="MyVideoView"
+                           VideoAspect="AspectFit"
+                         WidthRequest="250"
+                         HeightRequest="250"/>
+                        <Grid Margin="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*"/>
+                                <ColumnDefinition Width="0.1*"/>
+                                <ColumnDefinition Width="0.7*"/>
+                                <ColumnDefinition Width="0.1*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                       <ImageButton 
+                         x:Name="btnplay"
+                         HeightRequest="25"
+                         WidthRequest="25"
+                         Clicked="ButtonPlay_Clicked"
+                         Grid.Column="0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Start">
+                                    <ImageButton.Source>
+                                        <FontImageSource  
+                                                Glyph="&#xF040A;"
+                                                FontFamily="{DynamicResource MaterialFont}"
+                                                Size="20"
+                                                Color="Red"/>
+                                    </ImageButton.Source>
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
+                                                Value="1" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
+                                                Value="0.5" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+
+                                <ImageButton
+                         x:Name="btnpause"
+                         HeightRequest="25"
+                         WidthRequest="25"
+                         Clicked="ButtonPause_Clicked"
+                         IsVisible="False"
+                         Grid.Column="0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Start">
+                                    <ImageButton.Source>
+                                        <FontImageSource  
+                                                Glyph="&#xF03E4;"
+                                                FontFamily="{DynamicResource MaterialFont}"
+                                                Size="20"
+                                                Color="Red"/>
+                                    </ImageButton.Source>
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
+                                                Value="1" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
+                                                Value="0.5" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                            
+                            <ImageButton Source="next.png"
+                         Clicked="ButtonPlayNext_Clicked"
+                         HeightRequest="25"
+                         WidthRequest="25"
+                         Grid.Column="1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Start"/>
+                            
+                            <ImageButton
+                         Clicked="ButtonFullScreen_Clicked"
+                         HeightRequest="25"
+                         WidthRequest="25"
+                         Grid.Column="2"
+                         VerticalOptions="Center"
+                         HorizontalOptions="End">
+                                    <ImageButton.Source>
+                                        <FontImageSource  
+                                                Glyph="&#xF0601;"
+                                                FontFamily="{DynamicResource MaterialFont}"
+                                                Size="20"
+                                                Color="Red"/>
+                                    </ImageButton.Source>
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
+                                                Value="1" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
+                                                Value="0.5" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                            
+                        </Grid>
+                            
+                        <ListView x:Name="lstvideos"
+                  ItemsSource="{Binding .}"
+                  ItemSelected="Lstvideos_ItemSelected"
+                  HasUnevenRows="True">
+                            
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    
+                                        <customControls:ExtendedViewCell SelectedBackgroundColor="#66ffffff">
+                                            
+                                            <Grid Margin="10,0,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.4*"/>
+                                                <ColumnDefinition Width="0.6*"/>
+                                            </Grid.ColumnDefinitions>
+                                            
+                                 <Image Grid.Column="0"
+                                   Source="{Binding VideoImage}"
+                                   WidthRequest="100"
+                                   HeightRequest="100"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Start"
+                                   Aspect="AspectFit"/>
+                                            
+                               <Label Grid.Column="1"
+                                   VerticalOptions="Center"
+                                   Text="{Binding VideoTitle}"
+                                   HorizontalOptions="Start"
+                                   FontSize="Medium"
+                                   TextColor="Black"/>
+                                            
+                                        </Grid>
+                                        </customControls:ExtendedViewCell>
+                                    </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+
+                            </StackLayout>
+                        </StackLayout>
+                    
+                    
+                </StackLayout>
+            </ScrollView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

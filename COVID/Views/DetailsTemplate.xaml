@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="COVID.Views.DetailsTemplate">
+
+    <ContentView.Content>
+        
+        <StackLayout VerticalOptions="FillAndExpand"
+                     BackgroundColor="White"
+                     Margin="0,0,0,10"
+                     HorizontalOptions="FillAndExpand">
+            
+            <Grid Padding="4,4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition  Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition  Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+
+            <StackLayout Grid.Row="0"
+                         Grid.Column="0"
+                        Orientation="Vertical"
+                         Spacing="0"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+
+                <Label Text="Date etat"
+                       TextColor="#006A9A"
+                       HorizontalOptions="FillAndExpand"/>
+
+                <Label Text="heure"
+                       TextColor="Black"
+                       HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+
+
+            <StackLayout Grid.Row="0"
+                         Grid.Column="1"
+                        Orientation="Vertical"
+                          Spacing="0"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+
+                <Label Text="87"
+                       MaxLines="1"
+                       TextColor="#D21B33"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <Label Text="Confirmés"
+                        TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="0"
+                         Grid.Column="2"
+                          Spacing="0"
+                        Orientation="Vertical"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+
+                <Label Grid.Row="0"
+                    Text="15"
+                       MaxLines="1"
+                       TextColor="Orange"
+                       HorizontalOptions="CenterAndExpand"
+                       LineBreakMode="TailTruncation"/>
+
+                <Label Text="Actifs"
+                        TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="0"
+                         Grid.Column="3"
+                        Orientation="Vertical"
+                          Spacing="0"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+
+                <Label Text="27"
+                       MaxLines="1"
+                       TextColor="#146c53"
+                       HorizontalOptions="CenterAndExpand"
+                       LineBreakMode="TailTruncation"/>
+
+                <Label Text="Guéris"
+                        TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="0"
+                         Grid.Column="4"
+                        Orientation="Vertical"
+                          Spacing="0"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+
+                <Label Text="4"
+                       MaxLines="1"
+                       TextColor="#000000"
+                       HorizontalOptions="CenterAndExpand"
+                       LineBreakMode="TailTruncation"/>
+
+                <Label Text="Décès"
+                        TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Grid.ColumnSpan="5"
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi"
+                   MaxLines="3"
+                   LineBreakMode="TailTruncation"/>
+
+
+
+        </Grid>
+            
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

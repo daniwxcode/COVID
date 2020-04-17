@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="corona_covid_19_togo"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             ios:Page.UseSafeArea="True"
+             Title="Accueil"
+             x:Class="COVID.HomePage">
+
+    
+
+    <ContentPage.Content>
+
+      
+                <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            <ColumnDefinition  Width="*" />
+        </Grid.ColumnDefinitions>
+
+                    
+            <StackLayout Grid.Row="0"
+                         Grid.Column="0" 
+                         Grid.ColumnSpan="2"
+                Orientation="Vertical">
+
+                <StackLayout Orientation="Vertical"
+                             Spacing="0">
+
+                    <yummy:PancakeView BackgroundGradientEndColor="#146c53"
+                               BackgroundGradientStartColor="#006A9A"
+                               BackgroundGradientAngle="90"
+                               Elevation="5"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HasShadow="False">
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="Le numero vert pour plus d'infos"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="15,0,0,0"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalTextAlignment="Center"
+                            HeightRequest="50"
+                            TextColor="White"/>
+                            
+                            
+                            <StackLayout Orientation="Horizontal"
+                                         HorizontalOptions="EndAndExpand">
+
+                            <ImageButton x:Name="ImageButtonEtatcivil"
+                                         BackgroundColor="Transparent">
+                                <ImageButton.Source>
+                                    <FontImageSource  
+                                                Glyph="&#xF03F2;"
+                                                FontFamily="{DynamicResource MaterialFont}"
+                                                Size="20"
+                                                Color="White"/>
+                                </ImageButton.Source>
+
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Opacity"
+                                                Value="1" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Opacity"
+                                                Value="0.5" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+
+                            <Label Text="111"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="0,0,15,0"
+                                   FontAttributes="Bold"
+                            VerticalTextAlignment="Center"
+                            HeightRequest="50"
+                            TextColor="White"/>
+
+                            </StackLayout>
+                            
+                        </StackLayout>
+
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView BackgroundColor="White"
+                               Elevation="5"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HasShadow="True">
+
+                           <Label Text="Site d'information officiel du Gouvernement"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="15,0,0,0"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalTextAlignment="Center"
+                            HeightRequest="50"
+                            TextColor="#D21B33"/>
+
+                    </yummy:PancakeView>
+
+                </StackLayout>
+
+               
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="EndAndExpand"
+                             Margin="20,0,0,0"
+                             HorizontalOptions="StartAndExpand"
+                             Spacing="4">
+
+                <Label Text="Chiffres mis à jour le"
+                       TextColor="#146c53"
+                       FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                <Label Text="../../.."
+                       TextColor="#146c53"
+                       FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand" />
+
+                </StackLayout>
+   </StackLayout>
+
+   <yummy:PancakeView BackgroundColor="White" 
+                               Grid.Row="1"
+                               Margin="15,10,4,4"
+                               Grid.Column="0"
+                               Elevation="4"
+                               CornerRadius="6,6,6,6"
+                               HasShadow="True">
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"
+                             Spacing="5">
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
+
+                    
+                            <Image HeightRequest="50" 
+                                   WidthRequest="50"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="CenterAndExpand">
+                                
+                                <Image.Source>
+                                <svg:SvgImageSource Source="SVGResources.cas_actifs.svg" Width="50" Height="50" Color="Orange" />
+                                </Image.Source>
+                            </Image>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                                 Spacing="0">
+                        
+                             <Label 
+                               TextColor="Orange"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="17"
+                               FontAttributes="Bold"
+                               FontSize="23"/>
+
+                             <Label 
+                               TextColor="Orange"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="Cas Actif"
+                               FontSize="15"/>
+
+                    </StackLayout>
+                </StackLayout>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView BackgroundColor="White" 
+                               Grid.Row="1" 
+                               Grid.Column="1"
+                               Margin="4,10,15,4"
+                               Elevation="4"
+                               CornerRadius="6,6,6,6"
+                               HasShadow="True">
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"
+                             Spacing="5">
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
+
+                        <Image HeightRequest="50" 
+                                   WidthRequest="50"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="CenterAndExpand">
+
+                            <Image.Source>
+                                <svg:SvgImageSource Source="SVGResources.gueris.svg" Width="50" Height="50" Color="#146c53" />
+                            </Image.Source>
+                        </Image>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                                 Spacing="0">
+
+                        <Label 
+                               TextColor="#146c53"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="47"
+                               FontAttributes="Bold"
+                               FontSize="23"/>
+
+                        <Label 
+                               TextColor="#146c53"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="Cas guéris"
+                               FontSize="15"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView BackgroundColor="White" 
+                               Grid.Row="2" 
+                               Grid.Column="0"
+                               Margin="15,4,4,10"
+                               Elevation="4"
+                               CornerRadius="6,6,6,6"
+                               HasShadow="True">
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"
+                             Spacing="5">
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
+
+                        <Image HeightRequest="50" 
+                                   WidthRequest="50"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="CenterAndExpand">
+
+                            <Image.Source>
+                                <svg:SvgImageSource Source="SVGResources.deces.svg" Width="50" Height="50" Color="#000000" />
+                            </Image.Source>
+                        </Image>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                                 Spacing="0">
+
+                        <Label 
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="4"
+                               FontAttributes="Bold"
+                               FontSize="23"/>
+
+                        <Label 
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="Décès"
+                               FontSize="15"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView BackgroundColor="White" 
+                               Grid.Row="2" 
+                               Grid.Column="1"
+                               Margin="4,4,15,10"
+                               Elevation="4"
+                               CornerRadius="6,6,6,6"
+                               HasShadow="True">
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"
+                             Spacing="5">
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
+
+
+                        <Image HeightRequest="50" 
+                                   WidthRequest="50"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="CenterAndExpand">
+
+                            <Image.Source>
+                                <svg:SvgImageSource Source="SVGResources.cas_confirmés.svg" Width="50" Height="50" Color="#D21B33" />
+                            </Image.Source>
+                        </Image>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                                 Spacing="0">
+
+                        <Label 
+                               TextColor="#D21B33"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="100"
+                               FontAttributes="Bold"
+                               FontSize="23"/>
+
+                        <Label 
+                               TextColor="#D21B33"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               Text="Cas confirmés"
+                               FontSize="15"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </yummy:PancakeView>
+
+
+        </Grid>
+
+        
+    </ContentPage.Content>
+</ContentPage>

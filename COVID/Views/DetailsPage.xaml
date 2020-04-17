@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Details"
+             xmlns:local="clr-namespace:COVID.Views"
+             xmlns:customControls="clr-namespace:COVID.Controls"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             x:Class="COVID.DetailsPage">
+    
+    <ContentPage.Content> 
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Start"
+                         Spacing="0">
+
+                <yummy:PancakeView BackgroundGradientEndColor="#146c53"
+                               BackgroundGradientStartColor="#006A9A"
+                               BackgroundGradientAngle="90"
+                               Elevation="5"
+                               HeightRequest="60"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HasShadow="False">
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label Text="Le numero vert pour plus d'infos"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="15,0,0,0"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalTextAlignment="Center"
+                            HeightRequest="50"
+                            TextColor="White"/>
+
+
+                        <StackLayout Orientation="Horizontal"
+                                         HorizontalOptions="EndAndExpand">
+
+                            <ImageButton BackgroundColor="Transparent">
+                                <ImageButton.Source>
+                                    <FontImageSource  
+                                                Glyph="&#xF03F2;"
+                                                FontFamily="{DynamicResource MaterialFont}"
+                                                Size="20"
+                                                Color="White"/>
+                                </ImageButton.Source>
+
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Opacity"
+                                                Value="1" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Opacity"
+                                                Value="0.5" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+
+                            <Label Text="111"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="0,0,15,0"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"
+                            TextColor="White"/>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </yummy:PancakeView>
+
+                <yummy:PancakeView BackgroundColor="White"
+                               Elevation="5"
+                               HeightRequest="60"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HasShadow="True">
+
+                    <Label Text="Site d'information officiel du Gouvernement"
+                            VerticalOptions="CenterAndExpand" 
+                            Margin="15,0,0,0"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalTextAlignment="Center"
+                            TextColor="#D21B33"/>
+
+                </yummy:PancakeView>
+
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+
+                <ListView x:Name="list"
+                            ItemsSource="{Binding DetailsList}"
+                            VerticalOptions="FillAndExpand"
+                            SeparatorVisibility="None"
+                            BackgroundColor="#F1F1F1"
+                            HasUnevenRows="True"
+                            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                            VerticalScrollBarVisibility="Never">
+
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <customControls:ExtendedViewCell SelectedBackgroundColor="#66ffffff">
+
+                                <local:DetailsTemplate/>
+
+                            </customControls:ExtendedViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
