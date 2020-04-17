@@ -12,24 +12,22 @@
              Title="Accueil"
              x:Class="COVID.HomePage">
 
-    
+
 
     <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-      
-                <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="180" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-            <ColumnDefinition  Width="*" />
-        </Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*" />
+            </Grid.ColumnDefinitions>
 
-                    
+
             <StackLayout Grid.Row="0"
                          Grid.Column="0" 
                          Grid.ColumnSpan="2"
@@ -55,42 +53,42 @@
                             VerticalTextAlignment="Center"
                             HeightRequest="50"
                             TextColor="White"/>
-                            
-                            
+
+
                             <StackLayout Orientation="Horizontal"
                                          HorizontalOptions="EndAndExpand">
 
-                            <ImageButton x:Name="ImageButtonEtatcivil"
+                                <ImageButton x:Name="ImageButtonEtatcivil"
                                          BackgroundColor="Transparent">
-                                <ImageButton.Source>
-                                    <FontImageSource  
+                                    <ImageButton.Source>
+                                        <FontImageSource  
                                                 Glyph="&#xF03F2;"
                                                 FontFamily="{DynamicResource MaterialFont}"
                                                 Size="20"
                                                 Color="White"/>
-                                </ImageButton.Source>
+                                    </ImageButton.Source>
 
-                                <VisualStateManager.VisualStateGroups>
-                                    <VisualStateGroup x:Name="CommonStates">
-                                        <VisualState x:Name="Normal">
-                                            <VisualState.Setters>
-                                                <Setter Property="Opacity"
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
                                                 Value="1" />
-                                            </VisualState.Setters>
-                                        </VisualState>
+                                                </VisualState.Setters>
+                                            </VisualState>
 
-                                        <VisualState x:Name="Pressed">
-                                            <VisualState.Setters>
-                                                <Setter Property="Opacity"
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Opacity"
                                                 Value="0.5" />
-                                            </VisualState.Setters>
-                                        </VisualState>
+                                                </VisualState.Setters>
+                                            </VisualState>
 
-                                    </VisualStateGroup>
-                                </VisualStateManager.VisualStateGroups>
-                            </ImageButton>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
 
-                            <Label Text="111"
+                                <Label Text="111"
                             VerticalOptions="CenterAndExpand" 
                             Margin="0,0,15,0"
                                    FontAttributes="Bold"
@@ -99,7 +97,7 @@
                             TextColor="White"/>
 
                             </StackLayout>
-                            
+
                         </StackLayout>
 
                     </yummy:PancakeView>
@@ -110,7 +108,7 @@
                                VerticalOptions="Start"
                                HasShadow="True">
 
-                           <Label Text="Site d'information officiel du Gouvernement"
+                        <Label Text="Site d'information officiel du Gouvernement"
                             VerticalOptions="CenterAndExpand" 
                             Margin="15,0,0,0"
                             HorizontalOptions="StartAndExpand"
@@ -122,29 +120,29 @@
 
                 </StackLayout>
 
-               
+
                 <StackLayout Orientation="Horizontal"
                              VerticalOptions="EndAndExpand"
                              Margin="20,0,0,0"
                              HorizontalOptions="StartAndExpand"
                              Spacing="4">
 
-                <Label Text="Chiffres mis à jour le"
+                    <Label Text="Chiffres mis à jour le"
                        TextColor="#146c53"
                        FontAttributes="Bold"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand" />
 
-                <Label Text="../../.."
+                    <Label Text="../../.."
                        TextColor="#146c53"
                        FontAttributes="Bold"
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="CenterAndExpand" />
 
                 </StackLayout>
-   </StackLayout>
+            </StackLayout>
 
-   <yummy:PancakeView BackgroundColor="White" 
+            <yummy:PancakeView BackgroundColor="White" 
                                Grid.Row="1"
                                Margin="15,10,4,4"
                                Grid.Column="0"
@@ -161,16 +159,16 @@
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand">
 
-                    
-                            <Image HeightRequest="50" 
+
+                        <Image HeightRequest="50" 
                                    WidthRequest="50"
                                    HorizontalOptions="EndAndExpand"
                                    VerticalOptions="CenterAndExpand">
-                                
-                                <Image.Source>
+
+                            <Image.Source>
                                 <svg:SvgImageSource Source="SVGResources.cas_actifs.svg" Width="50" Height="50" Color="Orange" />
-                                </Image.Source>
-                            </Image>
+                            </Image.Source>
+                        </Image>
 
                     </StackLayout>
 
@@ -178,17 +176,17 @@
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="CenterAndExpand"
                                  Spacing="0">
-                        
-                             <Label 
+
+                        <Label 
                                x:Name="CasActifs"
                                TextColor="Orange"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
-                               Text="17"
+                               Text="{Binding CasActifs}"
                                FontAttributes="Bold"
                                FontSize="23"/>
 
-                             <Label 
+                        <Label 
                                TextColor="Orange"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
@@ -197,9 +195,9 @@
 
                     </StackLayout>
                 </StackLayout>
-                </yummy:PancakeView>
+            </yummy:PancakeView>
 
-                <yummy:PancakeView BackgroundColor="White" 
+            <yummy:PancakeView BackgroundColor="White" 
                                Grid.Row="1" 
                                Grid.Column="1"
                                Margin="4,10,15,4"
@@ -237,7 +235,7 @@
                                TextColor="#146c53"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
-                               Text="47"
+                               Text="{Binding CasGueris}"
                                FontAttributes="Bold"
                                FontSize="23"/>
 
@@ -290,7 +288,7 @@
                                TextColor="Black"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
-                               Text="4"
+                               Text="{Binding Deces}"
                                FontAttributes="Bold"
                                FontSize="23"/>
 
@@ -344,7 +342,7 @@
                                TextColor="#D21B33"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
-                               Text="100"
+                               Text="{Binding CasConfirmes}"
                                FontAttributes="Bold"
                                FontSize="23"/>
 
@@ -362,6 +360,6 @@
 
         </Grid>
 
-        
+
     </ContentPage.Content>
 </ContentPage>

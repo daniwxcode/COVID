@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using COVID.Services;
+using COVID.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,11 +15,8 @@ namespace COVID
     {
         public HomePage()
         {
-              InitializeComponent();
-           
-            var stats =  Covid19TgService.GetAsync();
-            CasActifs.Text = "30".ToString();
-           
+            BindingContext = new HomeViewModel();
+            InitializeComponent();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace COVID.Services
 {
     public static class Covid19TgService
     {
-         public static async Task<Stats> GetAsync()
+        public static async Task<Stats> GetAsync()
         {
             // Load default configuration
             var config = Configuration.Default.WithDefaultLoader();
@@ -26,13 +26,13 @@ namespace COVID.Services
             return stat;
         }
 
-         public static async Task<InfosCovid> GetDetailsAsync()
+        public static async Task<InfosCovid> GetDetailsAsync()
         {
             var config = Configuration.Default.WithDefaultLoader();
             var context = BrowsingContext.New(config);
-            var document = await context.OpenAsync("https://covid19.gouv.tg/situation-au-togo/");
+            var document = await context.OpenAsync("http://covid19.gouv.tg/situation-au-togo/");
             var details = new List<Details>();
-           
+
             var sections = document.QuerySelectorAll(".ee-loop__item>article>div>div>div");
             string xt = string.Empty;
 
@@ -42,8 +42,8 @@ namespace COVID.Services
                 xt += "\n\n";
                 var itemsections = item.QuerySelectorAll("section");
                 var itemHtmlDetails = itemsections.FirstOrDefault().QuerySelectorAll("h2");
-                itemDetails.Date =$"{itemHtmlDetails[0].InnerHtml} à { itemHtmlDetails[1].InnerHtml}";
-               
+                itemDetails.Date = $"{itemHtmlDetails[0].InnerHtml} à { itemHtmlDetails[1].InnerHtml}";
+
                 int i = 0;
                 Stats itemStats = new Stats();
                 itemStats.ActiveCases = itemHtmlDetails[3].InnerHtml.GetInt();
@@ -60,6 +60,6 @@ namespace COVID.Services
 
             return new InfosCovid(details);
         }
-       
+
     }
 }
