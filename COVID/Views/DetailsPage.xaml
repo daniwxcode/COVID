@@ -30,7 +30,7 @@
 
                     <StackLayout Orientation="Horizontal">
 
-                        <Label Text="Le numero vert pour plus d'infos"
+                        <Label Text="TOGO: Le numero vert pour plus d'infos"
                             VerticalOptions="CenterAndExpand" 
                             Margin="15,0,0,0"
                             HorizontalOptions="StartAndExpand"

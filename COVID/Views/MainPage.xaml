@@ -65,7 +65,7 @@
                 <views:MoviesPage />
             </ShellContent>
         </Tab>
-        <Tab Title="Dépistages">
+        <!--<Tab Title="Dépistages">
             <Tab.Icon>
                 <FontImageSource FontFamily="{DynamicResource MaterialFont}"
                     Glyph="&#xF02E1;" 
@@ -74,8 +74,8 @@
             <ShellContent>
                 <views:InformationPage />
             </ShellContent>
-        </Tab>
-        <Tab Title="Menu">
+        </Tab>-->
+        <!--<Tab Title="Menu">
             <Tab.Icon>
                 <FontImageSource FontFamily="{DynamicResource MaterialFont}"
                     Glyph="&#xF0A6E;" 
@@ -84,7 +84,7 @@
             <ShellContent>
                 <views:SettingsPage />
             </ShellContent>
-        </Tab>
+        </Tab>-->
     </TabBar>
 
 </Shell>
