@@ -133,7 +133,8 @@
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand" />
 
-                    <Label Text="../../.."
+                    <Label 
+                       Text="{Binding DateUpdate}"
                        TextColor="#146c53"
                        FontAttributes="Bold"
                        VerticalOptions="CenterAndExpand" 
@@ -178,8 +179,7 @@
                                  Spacing="0">
 
                         <Label 
-                               x:Name="CasActifs"
-                               TextColor="Orange"
+                              TextColor="Orange"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
                                Text="{Binding CasActifs}"
