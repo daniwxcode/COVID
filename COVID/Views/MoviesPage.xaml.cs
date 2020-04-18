@@ -23,48 +23,12 @@ namespace COVID
         {
             InitializeComponent();
 
+            webView.Source = myvideos[0];
+
             FillInformation();
         }
 
-        // Evenement play
-        private void ButtonPlay_Clicked(object sender, EventArgs e)
-        {
-            PlayVideo(index);
-
-        }
-        // Evenement pause
-        private async void ButtonPause_Clicked(object sender, EventArgs e)
-        {
-            await CrossMediaManager.Current.Pause();
-            btnpause.IsVisible = false;
-            btnplay.IsVisible = true;
-        }
-
-        private void ButtonPlayBack_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private async void PlayVideo(int index)
-        {
-            await CrossMediaManager.Current.Play(myvideos[index]);
-            btnplay.IsVisible = false;
-            btnpause.IsVisible = true;
-        }
-
-
-        private void ButtonPlayNext_Clicked(object sender, EventArgs e)
-        {
-
-            index++;
-            if (index > 5)
-            {
-                index = 0;
-            }
-            PlayVideo(index);
-        }
-
+  
 
         private void FillInformation()
         {
@@ -129,13 +93,9 @@ namespace COVID
 
             var item = e.SelectedItem as VideoModel;
             index = item.VideoIndex;
-            PlayVideo(item.VideoIndex);
+            webView.Source = myvideos[index];
         }
 
 
-        private void ButtonFullScreen_Clicked(object sender, EventArgs e)
-        {
-            MyVideoView.VideoAspect = VideoAspectMode.AspectFill;
-        }
     }
 }
