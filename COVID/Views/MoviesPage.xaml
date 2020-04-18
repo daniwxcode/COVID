@@ -326,135 +326,16 @@
 
                         <StackLayout>
 
-                        <myplayer:VideoView x:Name="MyVideoView"
-                           VideoAspect="AspectFit"
-                         WidthRequest="250"
-                         HeightRequest="250"/>
-                        <Grid Margin="10,0,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.1*"/>
-                                <ColumnDefinition Width="0.1*"/>
-                                <ColumnDefinition Width="0.7*"/>
-                                <ColumnDefinition Width="0.1*"/>
-                            </Grid.ColumnDefinitions>
-                            
-                       <ImageButton 
-                         x:Name="btnplay"
-                         HeightRequest="25"
-                         WidthRequest="25"
-                         Clicked="ButtonPlay_Clicked"
-                         Grid.Column="0"
-                         VerticalOptions="Center"
-                         HorizontalOptions="Start">
-                                    <ImageButton.Source>
-                                        <FontImageSource  
-                                                Glyph="&#xF040A;"
-                                                FontFamily="{DynamicResource MaterialFont}"
-                                                Size="20"
-                                                Color="Red"/>
-                                    </ImageButton.Source>
-
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Opacity"
-                                                Value="1" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-
-                                            <VisualState x:Name="Pressed">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Opacity"
-                                                Value="0.5" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                </ImageButton>
-
-                                <ImageButton
-                         x:Name="btnpause"
-                         HeightRequest="25"
-                         WidthRequest="25"
-                         Clicked="ButtonPause_Clicked"
-                         IsVisible="False"
-                         Grid.Column="0"
-                         VerticalOptions="Center"
-                         HorizontalOptions="Start">
-                                    <ImageButton.Source>
-                                        <FontImageSource  
-                                                Glyph="&#xF03E4;"
-                                                FontFamily="{DynamicResource MaterialFont}"
-                                                Size="20"
-                                                Color="Red"/>
-                                    </ImageButton.Source>
-
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Opacity"
-                                                Value="1" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-
-                                            <VisualState x:Name="Pressed">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Opacity"
-                                                Value="0.5" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                </ImageButton>
-                            
-                            <ImageButton Source="next.png"
-                         Clicked="ButtonPlayNext_Clicked"
-                         HeightRequest="25"
-                         WidthRequest="25"
-                         Grid.Column="1"
-                         VerticalOptions="Center"
-                         HorizontalOptions="Start"/>
-                            
-                            <ImageButton
-                         Clicked="ButtonFullScreen_Clicked"
-                         HeightRequest="25"
-                         WidthRequest="25"
-                         Grid.Column="2"
-                         VerticalOptions="Center"
-                         HorizontalOptions="End">
-                                    <ImageButton.Source>
-                                        <FontImageSource  
-                                                Glyph="&#xF0601;"
-                                                FontFamily="{DynamicResource MaterialFont}"
-                                                Size="20"
-                                                Color="Red"/>
-                                    </ImageButton.Source>
-
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Opacity"
-                                                Value="1" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-
-                                            <VisualState x:Name="Pressed">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Opacity"
-                                                Value="0.5" />
-                                                </VisualState.Setters>
-                                            </VisualState>
-
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                </ImageButton>
-                            
-                        </Grid>
+                                <Frame
+                                 CornerRadius="10"
+                                 Margin="5,0,5,0"
+                                 HeightRequest="200"
+                                 HasShadow="False">
+                                <!-- WebView needs to be given height and width request within layouts to render. -->
+                                <WebView x:Name="webView" HeightRequest="100"/>
+                            </Frame>
+                           
+                      
                             
                         <ListView x:Name="lstvideos"
                   ItemsSource="{Binding .}"
