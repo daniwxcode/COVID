@@ -107,10 +107,11 @@
                          HorizontalOptions="FillAndExpand">
 
                 <ListView x:Name="list"
-                            ItemsSource="{Binding DetailsList}"
+                            ItemsSource="{Binding  LeDetails }"
                             VerticalOptions="FillAndExpand"
                             SeparatorVisibility="None"
                             BackgroundColor="#F1F1F1"
+                          SelectionMode="None"
                             HasUnevenRows="True"
                             SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                             VerticalScrollBarVisibility="Never">

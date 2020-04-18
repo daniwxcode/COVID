@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using COVID.Services;
+using COVID.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +15,7 @@ namespace COVID
     {
         public DetailsPage()
         {
-             BindingContext = Covid19TgService.InfosCovid;
+             BindingContext =new DetailViewModel();
             InitializeComponent();
         }
     }
