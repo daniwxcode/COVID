@@ -1,10 +1,12 @@
-﻿using MediaManager;
+﻿using COVID.Services;
+using MediaManager;
 using MediaManager.Video;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 using Xamarin.Forms.Xaml;
@@ -96,6 +98,9 @@ namespace COVID
             webView.Source = myvideos[index];
         }
 
-
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+           Covid19TgService.AppelNumeroVert();
+        }
     }
 }

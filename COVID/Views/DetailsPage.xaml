@@ -42,7 +42,8 @@
                         <StackLayout Orientation="Horizontal"
                                          HorizontalOptions="EndAndExpand">
 
-                            <ImageButton BackgroundColor="Transparent">
+                            <ImageButton BackgroundColor="Transparent"
+                                        Command="{Binding Appel}" >
                                 <ImageButton.Source>
                                     <FontImageSource  
                                                 Glyph="&#xF03F2;"
