@@ -11,15 +11,12 @@ namespace COVID.ViewModels
     public class BaseViewModel : ObservableObject
     {
 
-        public ICommand Appel { get; set; }
+       
         public BaseViewModel()
         {
-            Appel =new Command(async () =>await  Appeler());
+           
         }
-        async Task Appeler()
-        {
-           Covid19TgService.AppelNumeroVert();
-        }
+       
 
     }
 }

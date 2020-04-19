@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using COVID.Models;
 using COVID.Services;
+using Xamarin.Forms;
 
 namespace COVID.ViewModels
 {
     class DetailViewModel : BaseViewModel
     {
-     
-        private async Task GetDetailsAsync()
-        {
-           Covid19TgService.InfosCovid= await Covid19TgService.GetDetailsAsync();
-            LeDetails = Covid19TgService.InfosCovid.Details;
-        }
+        public ICommand Appel { get; private set; }
+
+
+
         private List<Details> _details;
         public List<Details> LeDetails
         {
@@ -22,6 +22,8 @@ namespace COVID.ViewModels
 
             set { SetProperty(ref _details, value); }
         }
+
+
         public Stats Stat
         {
             get { return _stat; }
@@ -30,6 +32,8 @@ namespace COVID.ViewModels
         }
         private Stats _stat;
 
+
+
         private string _date;
         public string Date
         {
@@ -37,6 +41,8 @@ namespace COVID.ViewModels
 
             set { SetProperty(ref _date, value); }
         }
+
+
         private string _histoire;
         public string Histoire
         {
@@ -50,10 +56,23 @@ namespace COVID.ViewModels
         public string Deaths { get { return Stat.Deaths.ToString(); } }
         public string Total { get { return Stat.Total.ToString(); } }
 
-           public DetailViewModel()
+        public DetailViewModel()
         {
-            GetDetailsAsync();
+            _ = GetDetailsAsync();
 
+            Appel = new Command(() => Appeler());
         }
+
+        private async Task GetDetailsAsync()
+        {
+           Covid19TgService.InfosCovid= await Covid19TgService.GetDetailsAsync();
+            LeDetails = Covid19TgService.InfosCovid.Details;
+        }
+
+        private void Appeler()
+        {
+            Covid19TgService.AppelNumeroVert();
+        }
+
     }
 }

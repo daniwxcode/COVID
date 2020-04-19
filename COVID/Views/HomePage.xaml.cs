@@ -15,8 +15,9 @@ namespace COVID
     {
         public HomePage()
         {
-            BindingContext = new HomeViewModel();
+            
             InitializeComponent();
+            BindingContext = new HomeViewModel();
         }
     }
 }

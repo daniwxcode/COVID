@@ -121,6 +121,13 @@
 
                 </StackLayout>
 
+                <Label 
+                       Text="Situation au Togo"
+                       TextColor="#146c53"
+                        FontSize="Subtitle"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand" />
+
 
                 <StackLayout Orientation="Horizontal"
                              VerticalOptions="EndAndExpand"

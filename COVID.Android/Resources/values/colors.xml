@@ -6,4 +6,5 @@
   <color name="colorStart">#146c53</color>
   <color name="colorEnd">#006A9A</color>
     <color name="colorAccent">#FF4081</color>
+  <drawable name="bg_color">#FFFFFF</drawable>
 </resources>

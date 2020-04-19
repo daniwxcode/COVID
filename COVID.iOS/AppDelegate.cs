@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using MediaManager;
 using UIKit;
 
@@ -14,6 +15,7 @@ namespace COVID.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
+        public override UIWindow Window { get; set; }
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -23,13 +25,29 @@ namespace COVID.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
 
-            Xamarin.Forms.Svg.iOS.SvgImage.Init();  //need to write here
-            CrossMediaManager.Current.Init();
-            LoadApplication(new App());
+            if (Window == null)
+            {
+                Window = new UIWindow(frame: UIScreen.MainScreen.Bounds);
+                var initialViewController = new SplashViewController();
+                Window.RootViewController = initialViewController;
+                Window.MakeKeyAndVisible();
 
-            return base.FinishedLaunching(app, options);
+                return true;
+            }
+            else
+            {
+
+                global::Xamarin.Forms.Forms.Init();
+
+                AnimationViewRenderer.Init();
+                Xamarin.Forms.Svg.iOS.SvgImage.Init();  //need to write here
+                CrossMediaManager.Current.Init();
+                LoadApplication(new App());
+
+                return base.FinishedLaunching(app, options);
+
+            }
         }
     }
 }
