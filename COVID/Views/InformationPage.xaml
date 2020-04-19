@@ -7,11 +7,5 @@
              Title="Depistage"
              x:Class="COVID.InformationPage">
     
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <WebView Source="https://covid19.who.int/" />
 </ContentPage>
