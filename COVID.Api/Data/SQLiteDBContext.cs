@@ -9,8 +9,9 @@ namespace COVID.Api.Data
 {
     public class SqLiteDbContext: DbContext
     {
-        public DbSet<InfosCovid> InfosCovids { get; set; }
         public DbSet<CovidTgResume> CovidTgResumes { get; set; }
+        public DbSet<Stats> Stats { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("Data Source=covidsqlite.db");
     }

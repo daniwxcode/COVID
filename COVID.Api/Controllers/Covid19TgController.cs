@@ -13,7 +13,7 @@ namespace COVID.Api.Controllers
     public class Covid19TgController : ControllerBase
     {
         [HttpGet]
-        public async Task<InfosCovid> Get()
+        public async Task<List<CovidTgResume>> Get()
         {
             return await InfosCovidProvider.GetLastAsync();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AngleSharp;
 using COVID.Api.Models;
@@ -9,38 +10,53 @@ namespace COVID.Api.Data
 {
     public class InfosCovidProvider
     {
-        public static void Add(InfosCovid infosCovid)
+        public static List<CovidTgResume> Details { get; set; }
+        public static Timer AutoRefreshTimer { get; set; }
+
+        static InfosCovidProvider()
         {
-            using var db = new SqLiteDbContext();
-            db.Add(infosCovid);
-            db.SaveChanges();
+            Details= new List<CovidTgResume>();
+            AutoRefreshTimer = null;
         }
 
-        public static async Task<InfosCovid> GetLastAsync()
+        public static  void AutoRefresh()
         {
-//            await using var db = new SqLiteDbContext();
-//            var infos = db.InfosCovids?.AsEnumerable().LastOrDefault();
-//            if (infos?.InfosOfDay == null)
-//            {
-//                infos = await LoadInfosCovidAsync();
-//            }
-//
-//            return infos ;
+            var startTimeSpan = TimeSpan.Zero;
+            var periodTimeSpan = TimeSpan.FromMinutes(1);
 
-            return await LoadInfosCovidAsync();
+            AutoRefreshTimer = new Timer(async (e) =>
+            {
+                Details = await LoadInfosCovidAsync();
+
+            }, null, startTimeSpan, periodTimeSpan);
+
         }
 
-        public static bool HaveDiff(InfosCovid oldInfos, InfosCovid newInfos )
+        public static async Task<List<CovidTgResume>> GetLastAsync()
+        {
+            if (Details.Count == 0)
+            {
+                Details = await LoadInfosCovidAsync();
+                if (AutoRefreshTimer == null)
+                {
+                    AutoRefresh();
+                }
+            }
+            
+            return Details;
+        }
+
+        public static bool HaveDiff(CovidTgResume oldCovidTgResume, CovidTgResume newCovidTgResume )
         {
             return !(
-                oldInfos.InfosOfDay.ActiveCases == newInfos.InfosOfDay.ActiveCases &&
-                oldInfos.InfosOfDay.Cured == newInfos.InfosOfDay.Cured &&
-                oldInfos.InfosOfDay.Deaths == newInfos.InfosOfDay.Deaths &&
-                oldInfos.InfosOfDay.Total == newInfos.InfosOfDay.Total
+                oldCovidTgResume.ActiveCases == newCovidTgResume.ActiveCases &&
+                oldCovidTgResume.Cured == newCovidTgResume.Cured &&
+                oldCovidTgResume.Deaths == newCovidTgResume.Deaths &&
+                oldCovidTgResume.Total == newCovidTgResume.Total
             );
         }
 
-        public static async Task<InfosCovid> LoadInfosCovidAsync()
+        public static async Task<List<CovidTgResume>> LoadInfosCovidAsync()
         {
             var config = Configuration.Default.WithDefaultLoader();
             var context = BrowsingContext.New(config);
@@ -74,14 +90,9 @@ namespace COVID.Api.Data
                 details.Add(itemDetails);
 
             }
-            var infos = new InfosCovid()
-            {
-                Details = details
-            };
+          
 
-           // Add(infos);
-
-            return infos;
+            return details;
         }
     }
 }
