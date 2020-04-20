@@ -52,7 +52,8 @@
                             HorizontalOptions="StartAndExpand"
                             VerticalTextAlignment="Center"
                             HeightRequest="50"
-                            TextColor="White"/>
+                            TextColor="White"
+                            FontFamily="{StaticResource RobotoBoldFont}"/>
 
 
                             <StackLayout Orientation="Horizontal"
@@ -95,7 +96,8 @@
                                    FontAttributes="Bold"
                             VerticalTextAlignment="Center"
                             HeightRequest="50"
-                            TextColor="White"/>
+                            TextColor="White"
+                            FontFamily="{StaticResource MontserratBoldFont}"/>
 
                             </StackLayout>
 
@@ -115,23 +117,24 @@
                             HorizontalOptions="StartAndExpand"
                             VerticalTextAlignment="Center"
                             HeightRequest="50"
-                            TextColor="#D21B33"/>
+                            TextColor="#D21B33"
+                            FontFamily="{StaticResource MontserratBoldFont}"/>
 
                     </yummy:PancakeView>
 
                 </StackLayout>
 
-                <Label 
-                       Text="Situation au Togo"
-                       TextColor="#146c53"
-                        FontSize="Subtitle"
-                       FontAttributes="Bold"
-                       HorizontalOptions="CenterAndExpand" />
+                <!-- <Label  -->
+                <!--        Text="Situation au Togo" -->
+                <!--        TextColor="#146c53" -->
+                <!--         FontSize="Subtitle" -->
+                <!--        FontAttributes="Bold" -->
+                <!--        HorizontalOptions="CenterAndExpand" /> -->
 
 
                 <StackLayout Orientation="Horizontal"
                              VerticalOptions="EndAndExpand"
-                             Margin="20,0,0,0"
+                             Margin="30,0,0,0"
                              HorizontalOptions="StartAndExpand"
                              Spacing="4">
 
@@ -139,14 +142,16 @@
                        TextColor="#146c53"
                        FontAttributes="Bold"
                         VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand" />
+                        HorizontalOptions="CenterAndExpand"
+                       FontFamily="{StaticResource MontserratMediumFont}"/>
 
                     <Label 
                        Text="{Binding DateUpdate}"
                        TextColor="#146c53"
                        FontAttributes="Bold"
                        VerticalOptions="CenterAndExpand" 
-                       HorizontalOptions="CenterAndExpand" />
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="{StaticResource MontserratBoldFont}"/>
 
                 </StackLayout>
             </StackLayout>
@@ -162,7 +167,8 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand"
-                             Spacing="5">
+                             Spacing="5"
+                             Padding="15">
 
                     <StackLayout Orientation="Vertical"
                              HorizontalOptions="FillAndExpand"
@@ -175,7 +181,7 @@
                                    VerticalOptions="CenterAndExpand">
 
                             <Image.Source>
-                                <svg:SvgImageSource Source="SVGResources.cas_actifs.svg" Width="50" Height="50" Color="Orange" />
+                                <svg:SvgImageSource Source="SVGResources.cas_actifs.svg" Width="100" Height="100" Color="Orange" />
                             </Image.Source>
                         </Image>
 
@@ -192,14 +198,15 @@
                                VerticalOptions="Center"
                                Text="{Binding CasActifs}"
                                FontAttributes="Bold"
-                               FontSize="23"/>
+                               FontSize="50"/>
 
                         <Label 
                                TextColor="Orange"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
                                Text="Cas Actif"
-                               FontSize="15"/>
+                               FontSize="15"
+                               FontFamily="{StaticResource MontserratBoldFont}"/>
 
                     </StackLayout>
                 </StackLayout>
@@ -216,7 +223,8 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand"
-                             Spacing="5">
+                             Spacing="5"
+                             Padding="15">
 
                     <StackLayout Orientation="Vertical"
                              HorizontalOptions="FillAndExpand"
@@ -228,7 +236,7 @@
                                    VerticalOptions="CenterAndExpand">
 
                             <Image.Source>
-                                <svg:SvgImageSource Source="SVGResources.gueris.svg" Width="50" Height="50" Color="#146c53" />
+                                <svg:SvgImageSource Source="SVGResources.gueris.svg" Width="100" Height="100" Color="#146c53" />
                             </Image.Source>
                         </Image>
 
@@ -245,14 +253,15 @@
                                VerticalOptions="Center"
                                Text="{Binding CasGueris}"
                                FontAttributes="Bold"
-                               FontSize="23"/>
+                               FontSize="50"/>
 
                         <Label 
                                TextColor="#146c53"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
                                Text="Cas guéris"
-                               FontSize="15"/>
+                               FontSize="15"
+                               FontFamily="{StaticResource MontserratBoldFont}"/>
 
                     </StackLayout>
                 </StackLayout>
@@ -269,7 +278,8 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand"
-                             Spacing="5">
+                             Spacing="5"
+                             Padding="15">
 
                     <StackLayout Orientation="Vertical"
                              HorizontalOptions="FillAndExpand"
@@ -281,7 +291,7 @@
                                    VerticalOptions="CenterAndExpand">
 
                             <Image.Source>
-                                <svg:SvgImageSource Source="SVGResources.deces.svg" Width="50" Height="50" Color="#000000" />
+                                <svg:SvgImageSource Source="SVGResources.deces.svg" Width="100" Height="100" Color="#000000" />
                             </Image.Source>
                         </Image>
 
@@ -298,14 +308,15 @@
                                VerticalOptions="Center"
                                Text="{Binding Deces}"
                                FontAttributes="Bold"
-                               FontSize="23"/>
+                               FontSize="50"/>
 
                         <Label 
                                TextColor="Black"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
                                Text="Décès"
-                               FontSize="15"/>
+                               FontSize="15"
+                               FontFamily="{StaticResource MontserratBoldFont}"/>
 
                     </StackLayout>
                 </StackLayout>
@@ -322,7 +333,8 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand"
-                             Spacing="5">
+                             Spacing="5"
+                             Padding="15">
 
                     <StackLayout Orientation="Vertical"
                              HorizontalOptions="FillAndExpand"
@@ -335,7 +347,7 @@
                                    VerticalOptions="CenterAndExpand">
 
                             <Image.Source>
-                                <svg:SvgImageSource Source="SVGResources.cas_confirmés.svg" Width="50" Height="50" Color="#D21B33" />
+                                <svg:SvgImageSource Source="SVGResources.cas_confirmés.svg" Width="100" Height="100" Color="#D21B33" />
                             </Image.Source>
                         </Image>
 
@@ -352,14 +364,15 @@
                                VerticalOptions="Center"
                                Text="{Binding CasConfirmes}"
                                FontAttributes="Bold"
-                               FontSize="23"/>
+                               FontSize="50"/>
 
                         <Label 
                                TextColor="#D21B33"
                                HorizontalOptions="StartAndExpand"
                                VerticalOptions="Center"
-                               Text="Cas confirmés"
-                               FontSize="15"/>
+                               Text="Cas confirmés au total"
+                               FontSize="15"
+                               FontFamily="{StaticResource MontserratBoldFont}"/>
 
                     </StackLayout>
                 </StackLayout>

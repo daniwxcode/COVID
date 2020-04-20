@@ -37,7 +37,8 @@
                             HeightRequest="50"
                             HorizontalOptions="StartAndExpand"
                             VerticalTextAlignment="Center"
-                            TextColor="White"/>
+                            TextColor="White"
+                            FontFamily="{StaticResource RobotoBoldFont}"/>
 
 
                         <StackLayout Orientation="Horizontal"
@@ -77,7 +78,8 @@
                             Margin="0,0,15,0"
                             FontAttributes="Bold"
                             VerticalTextAlignment="Center"
-                            TextColor="White"/>
+                            TextColor="White"
+                            FontFamily="{StaticResource MontserratBoldFont}"/>
 
                         </StackLayout>
 
@@ -97,7 +99,8 @@
                             Margin="15,0,0,0"
                             HorizontalOptions="StartAndExpand"
                             VerticalTextAlignment="Center"
-                            TextColor="#D21B33"/>
+                            TextColor="#D21B33"
+                            FontFamily="{StaticResource MontserratBoldFont}"/>
 
                 </yummy:PancakeView>
 
@@ -127,7 +130,8 @@
                        FontSize="Title"
                        FontAttributes="Bold"
                         VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand"/>
+                        HorizontalOptions="CenterAndExpand"
+                       FontFamily="{StaticResource MontserratBoldFont}"/>
 
                             <BoxView HorizontalOptions="CenterAndExpand" 
                                     VerticalOptions="CenterAndExpand" 
@@ -314,7 +318,8 @@
                                  FontSize="Title"
                                  FontAttributes="Bold"
                                   VerticalOptions="CenterAndExpand" 
-                                  HorizontalOptions="CenterAndExpand"/>
+                                  HorizontalOptions="CenterAndExpand"
+                                 FontFamily="{StaticResource MontserratBoldFont}"/>
 
                             <BoxView HorizontalOptions="CenterAndExpand" 
                                     VerticalOptions="CenterAndExpand" 

@@ -16,7 +16,7 @@
             
             <Grid Padding="4,4">
             <Grid.RowDefinitions>
-                 <RowDefinition Height="15" />
+                <RowDefinition Height="25" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -38,7 +38,10 @@
 
                 <Label Text="{Binding Date }"
                        TextColor="#006A9A"
-                       HorizontalOptions="FillAndExpand"/>
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="16"
+                       FontFamily="{StaticResource MontserratBoldFont}"
+                       Padding="10,10,0,20"/>
 
 
             </StackLayout>
@@ -55,7 +58,9 @@
                 <Label Text="{Binding Total }"
                        MaxLines="1"
                        TextColor="#D21B33"
-                       HorizontalOptions="CenterAndExpand"/>
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="{StaticResource MontserratBoldFont}"
+                       FontSize="25"/>
 
                 <Label Text="Confirmés"
                         TextColor="Black"
@@ -76,7 +81,9 @@
                        MaxLines="1"
                        TextColor="Orange"
                        HorizontalOptions="CenterAndExpand"
-                       LineBreakMode="TailTruncation"/>
+                       LineBreakMode="TailTruncation"
+                    FontFamily="{StaticResource MontserratBoldFont}"
+                    FontSize="25"/>
 
                 <Label Text="Actifs"
                         TextColor="Black"
@@ -96,7 +103,9 @@
                        MaxLines="1"
                        TextColor="#146c53"
                        HorizontalOptions="CenterAndExpand"
-                       LineBreakMode="TailTruncation"/>
+                       LineBreakMode="TailTruncation"
+                       FontFamily="{StaticResource MontserratBoldFont}"
+                       FontSize="25"/>
 
                 <Label Text="Guéris"
                         TextColor="Black"
@@ -115,7 +124,9 @@
                        MaxLines="1"
                        TextColor="#000000"
                        HorizontalOptions="CenterAndExpand"
-                       LineBreakMode="TailTruncation"/>
+                       LineBreakMode="TailTruncation"
+                       FontFamily="{StaticResource MontserratBoldFont}"
+                       FontSize="25"/>
 
                 <Label Text="Décès"
                         TextColor="Black"
@@ -130,6 +141,10 @@
                    VerticalOptions="FillAndExpand"
                    Grid.ColumnSpan="4"
                     Text="{Binding Histoire }"
+                   FontFamily="{StaticResource MontserratMediumFont}"
+                   FontSize="16"
+                   Padding="10,30,10,10"
+                   TextColor="Black"
                  />
 
 

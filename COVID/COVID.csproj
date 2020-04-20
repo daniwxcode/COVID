@@ -11,6 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="SVGResources\cas_actifs.svg" />
     <None Remove="SVGResources\cas_confirmés.svg" />
     <None Remove="SVGResources\deces.svg" />

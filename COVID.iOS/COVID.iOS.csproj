@@ -72,6 +72,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\materialdesignicons-webfont.ttf" />
     <InterfaceDefinition Include="SplashViewController.xib" />
+    <BundleResource Include="Resources\Roboto-Black.ttf" />
+    <BundleResource Include="Resources\Roboto-BlackItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Bold.ttf" />
+    <BundleResource Include="Resources\Roboto-BoldItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Italic.ttf" />
+    <BundleResource Include="Resources\Roboto-Light.ttf" />
+    <BundleResource Include="Resources\Roboto-LightItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Medium.ttf" />
+    <BundleResource Include="Resources\Roboto-MediumItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Regular.ttf" />
+    <BundleResource Include="Resources\Roboto-Thin.ttf" />
+    <BundleResource Include="Resources\Roboto-ThinItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-Black.ttf" />
+    <BundleResource Include="Resources\Montserrat-BlackItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-Bold.ttf" />
+    <BundleResource Include="Resources\Montserrat-BoldItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-ExtraBold.ttf" />
+    <BundleResource Include="Resources\Montserrat-ExtraBoldItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-ExtraLight.ttf" />
+    <BundleResource Include="Resources\Montserrat-ExtraLightItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-Italic.ttf" />
+    <BundleResource Include="Resources\Montserrat-Light.ttf" />
+    <BundleResource Include="Resources\Montserrat-LightItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-Medium.ttf" />
+    <BundleResource Include="Resources\Montserrat-MediumItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-Regular.ttf" />
+    <BundleResource Include="Resources\Montserrat-SemiBold.ttf" />
+    <BundleResource Include="Resources\Montserrat-SemiBoldItalic.ttf" />
+    <BundleResource Include="Resources\Montserrat-Thin.ttf" />
+    <BundleResource Include="Resources\Montserrat-ThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

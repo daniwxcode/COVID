@@ -15,5 +15,21 @@
             </OnPlatform>
             
         </ResourceDictionary>
+
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="RobotoBoldFont">
+                <On Platform="Android" Value="Roboto-Bold.ttf#Roboto Bold" />
+                <On Platform="iOS" Value="Roboto-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="MontserratBoldFont">
+                <On Platform="Android" Value="Montserrat-Bold.ttf#Montserrat Bold" />
+                <On Platform="iOS" Value="Montserrat-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="MontserratMediumFont">
+                <On Platform="Android" Value="Montserrat-Medium.ttf#Montserrat Medium" />
+                <On Platform="iOS" Value="Montserrat-Medium" />
+            </OnPlatform>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
