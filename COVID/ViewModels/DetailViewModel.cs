@@ -23,7 +23,6 @@ namespace COVID.ViewModels
             set { SetProperty(ref _details, value); }
         }
 
-
         public Stats Stat
         {
             get { return _stat; }
@@ -31,8 +30,6 @@ namespace COVID.ViewModels
             set { SetProperty(ref _stat, value); }
         }
         private Stats _stat;
-
-
 
         private string _date;
         public string Date
@@ -42,15 +39,13 @@ namespace COVID.ViewModels
             set { SetProperty(ref _date, value); }
         }
 
-
-        private string _histoire;
-        public string Histoire
+        private string _history;
+        public string History
         {
-            get { return _histoire; }
+            get { return _history; }
 
-            set { SetProperty(ref _histoire, value); }
+            set { SetProperty(ref _history, value); }
         }
-
         public string ActiveCases { get { return Stat.ActiveCases.ToString(); } }
         public string Cured { get { return Stat.Cured.ToString(); } }
         public string Deaths { get { return Stat.Deaths.ToString(); } }
@@ -58,17 +53,17 @@ namespace COVID.ViewModels
 
         public DetailViewModel()
         {
-            _ = GetDetailsAsync();
+           _= GetDetailsAsync();
 
             Appel = new Command(() => Appeler());
         }
 
         private async Task GetDetailsAsync()
         {
-           Covid19TgService.InfosCovid= await Covid19TgService.GetDetailsAsync();
+             Covid19TgService.InfosCovid= await AzureClient.RefreshDataAsync();
             LeDetails = Covid19TgService.InfosCovid.Details;
         }
-
+        
         private void Appeler()
         {
             Covid19TgService.AppelNumeroVert();

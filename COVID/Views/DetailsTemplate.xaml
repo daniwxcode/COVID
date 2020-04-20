@@ -140,7 +140,7 @@
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand"
                    Grid.ColumnSpan="4"
-                    Text="{Binding Histoire }"
+                    Text="{Binding History }"
                    FontFamily="{StaticResource MontserratMediumFont}"
                    FontSize="16"
                    Padding="10,30,10,10"

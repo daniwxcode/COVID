@@ -7,9 +7,10 @@ namespace COVID.Models
 {
     public class Details
     {
+      
         public Stats Stat { get; set; }
         public string Date { get; set; }
-        public string Histoire { get; set; }
+        public string History { get; set; }
 
          public string ActiveCases { get{ return Stat.ActiveCases.ToString();} }
         public string Cured { get{ return Stat.Cured.ToString();} }

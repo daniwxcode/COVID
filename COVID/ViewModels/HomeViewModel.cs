@@ -71,17 +71,13 @@ namespace COVID.ViewModels
 
         async Task GetDetails()
         {
-
-            //var stat =  await Covid19TgService.GetAsync();
-       
-            Covid19TgService.InfosCovid= await Covid19TgService.GetDetailsAsync();
-
-            CasActifs = Covid19TgService.InfosCovid.InfosduJour.ActiveCases.ToString();
-            CasGueris = Covid19TgService.InfosCovid.InfosduJour.Cured.ToString();
-            Deces = Covid19TgService.InfosCovid.InfosduJour.Deaths.ToString();
-            CasConfirmes = Covid19TgService.InfosCovid.InfosduJour.Total.ToString();
-            DateUpdate = Covid19TgService.InfosCovid.Details.FirstOrDefault().Date;
-
+           Covid19TgService.InfosCovid= await AzureClient.RefreshDataAsync();
+            var info = Covid19TgService.InfoduJour;
+            CasActifs = info.ActiveCases.ToString();
+            CasGueris = info.Cured.ToString();
+            Deces = info.Deaths.ToString();
+            CasConfirmes = info.Total.ToString();
+            DateUpdate = info.Date;
         }
 
         private void Appeler()
