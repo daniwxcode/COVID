@@ -80,7 +80,7 @@ namespace COVID.ViewModels
             CasGueris = Covid19TgService.InfosCovid.InfosduJour.Cured.ToString();
             Deces = Covid19TgService.InfosCovid.InfosduJour.Deaths.ToString();
             CasConfirmes = Covid19TgService.InfosCovid.InfosduJour.Total.ToString();
-            DateUpdate = Covid19TgService.InfosCovid.Details.FirstOrDefault().Date;
+            DateUpdate = Covid19TgService.InfosCovid.Details.FirstOrDefault()?.Date;
 
         }
 

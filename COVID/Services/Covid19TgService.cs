@@ -21,14 +21,14 @@ namespace COVID.Services
             // This is where the HTTP request happens, returns <IDocument> that // we can query later
             try
             {
-            var document = await context.OpenAsync("https://covid19.gouv.tg/");
-            string tmp = document.QuerySelector("#active-cases>div>h2").InnerHtml;
-            var stat = new Stats();
-            stat.ActiveCases = document.ReadInteger("#active-cases>div>h2");
-            stat.Cured = document.ReadInteger("#cured>div>h2");
-            stat.Deaths = document.ReadInteger("#deceased>div>h2");
-            return stat; 
-                }catch(Exception e)
+                var document = await context.OpenAsync("https://covid19.gouv.tg/");
+                string tmp = document.QuerySelector("#active-cases>div>h2").InnerHtml;
+                var stat = new Stats();
+                stat.ActiveCases = document.ReadInteger("#active-cases>div>h2");
+                stat.Cured = document.ReadInteger("#cured>div>h2");
+                stat.Deaths = document.ReadInteger("#deceased>div>h2");
+                return stat; 
+            }catch(Exception e)
             {
                 var t = e.Message;
                 return new Stats();
@@ -58,7 +58,7 @@ namespace COVID.Services
                 var itemHtmlDetails = itemsections.FirstOrDefault().QuerySelectorAll("h2");
                 itemDetails.Date = $"{itemHtmlDetails[0].InnerHtml} à { itemHtmlDetails[1].InnerHtml}";
 
-                int i = 0;
+               
                 Stats itemStats = new Stats();
                 itemStats.ActiveCases = itemHtmlDetails[3].InnerHtml.GetInt();
                 itemStats.Cured = itemHtmlDetails[4].InnerHtml.GetInt();
