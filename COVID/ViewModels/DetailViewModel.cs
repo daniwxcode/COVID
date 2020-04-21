@@ -65,7 +65,7 @@ namespace COVID.ViewModels
 
         private async Task GetDetailsAsync()
         {
-           Covid19TgService.InfosCovid= await Covid19TgService.GetDetailsAsync();
+           Covid19TgService.InfosCovid= await Services.Services.GetData();
             LeDetails = Covid19TgService.InfosCovid;
         }
 

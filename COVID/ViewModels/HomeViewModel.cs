@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using COVID.Controls;
 using COVID.Services;
 using NScrape;
 using NScrape.Forms;
@@ -72,7 +71,7 @@ namespace COVID.ViewModels
 
         async Task GetDetails()
         {
-            Covid19TgService.InfosCovid= await Covid19TgService.GetDetailsAsync();           
+            Covid19TgService.InfosCovid= await Services.Services.GetData();           
             CasActifs = Covid19TgService.InfosCovid.InfosduJour().ActiveCases;
             CasGueris = Covid19TgService.InfosCovid.InfosduJour().Cured;
             Deces = Covid19TgService.InfosCovid.InfosduJour().Deaths;
