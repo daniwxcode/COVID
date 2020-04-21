@@ -12,16 +12,6 @@ namespace COVID.Controls
         {
 
         }
-        public string GetConditions()
-        {
-            var node = HtmlDocument.DocumentNode.Descendants().SingleOrDefault(n => n.Attributes.Contains("id") && n.Attributes["id"].Value == "active-cases");
-
-            if (node != null)
-            {
-                return node.InnerText;
-            }
-
-            throw new ScrapeException("Could not scrape conditions.", Html);
-        }
+     
     }
 }

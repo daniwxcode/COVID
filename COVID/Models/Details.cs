@@ -10,7 +10,6 @@ namespace COVID.Models
         public Stats Stat { get; set; }
         public string Date { get; set; }
         public string Histoire { get; set; }
-
          public string ActiveCases { get{ return Stat.ActiveCases.ToString();} }
         public string Cured { get{ return Stat.Cured.ToString();} }
         public string  Deaths { get{ return Stat.Deaths.ToString();} }

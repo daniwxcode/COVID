@@ -12,35 +12,13 @@ namespace COVID.Services
 {
     public static class Covid19TgService
     {
-        public static async Task<Stats> GetAsync()
-        {
-            // Load default configuration
-            var config = Configuration.Default.WithDefaultLoader();
-            // Create a new browsing context
-            var context = BrowsingContext.New(config);
-            // This is where the HTTP request happens, returns <IDocument> that // we can query later
-            try
-            {
-            var document = await context.OpenAsync("https://covid19.gouv.tg/");
-            string tmp = document.QuerySelector("#active-cases>div>h2").InnerHtml;
-            var stat = new Stats();
-            stat.ActiveCases = document.ReadInteger("#active-cases>div>h2");
-            stat.Cured = document.ReadInteger("#cured>div>h2");
-            stat.Deaths = document.ReadInteger("#deceased>div>h2");
-            return stat; 
-                }catch(Exception e)
-            {
-                var t = e.Message;
-                return new Stats();
-            }
-        }
         public static void AppelNumeroVert()
         {
              PhoneDialer.Open(Covid19TgService.NumeroVert);
         }
         public static string NumeroVert{get;set;}="111";
-        public static InfosCovid InfosCovid{get;set;}
-        public static async Task<InfosCovid> GetDetailsAsync()
+        public static List<Details> InfosCovid{get;set;}
+        public static async Task<List<Details>> GetDetailsAsync()
         {
             var config = Configuration.Default.WithDefaultLoader();
             var context = BrowsingContext.New(config);
@@ -72,7 +50,7 @@ namespace COVID.Services
 
             }
 
-            return new InfosCovid(details);
+            return details;
         }
 
     }

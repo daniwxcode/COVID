@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AngleSharp.Dom;
+using COVID.Models;
 
 namespace COVID.Controls
 {
@@ -25,6 +26,9 @@ namespace COVID.Controls
             uint.TryParse(string.Join("", regxMatches), out uint n);
             return n;
         }
-
+        public static Details InfosduJour(this List<Details> details)
+        {
+            return details.FirstOrDefault();
+        }
     }
 }
