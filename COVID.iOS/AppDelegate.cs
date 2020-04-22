@@ -7,6 +7,7 @@ using Lottie.Forms.iOS.Renderers;
 using Matcha.BackgroundService.iOS;
 using MediaManager;
 using UIKit;
+using UserNotifications;
 
 namespace COVID.iOS
 {
@@ -27,7 +28,22 @@ namespace COVID.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             BackgroundAggregator.Init(this);
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 10.0+
+                UNUserNotificationCenter.Current.RequestAuthorization(
+                        UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
+                        (approved, error) => { });
+            }
+            else if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 8.0+
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(
+                        UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound,
+                        new NSSet());
 
+                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            }
             if (Window == null)
             {
                 Window = new UIWindow(frame: UIScreen.MainScreen.Bounds);

@@ -33,6 +33,9 @@ namespace COVID.Services
             return details.FirstOrDefault();
         }
 
+        public static string Info (this Details details){
+            return $"Nouvelles situation du {details.Date} : {details.Stat.ToString()}";
+        }
         public static void Save(this List<Details> json)
         {
             Application.Current.Properties["post_data"] = JsonConvert.SerializeObject(json);

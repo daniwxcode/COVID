@@ -9,6 +9,7 @@ using Xamarin.Forms.Svg.Droid;
 using MediaManager;
 using Plugin.CurrentActivity;
 using Matcha.BackgroundService.Droid;
+using Plugin.LocalNotifications;
 
 namespace COVID.Droid
 {
@@ -19,7 +20,7 @@ namespace COVID.Droid
         {
             //Background Worker
             BackgroundAggregator.Init(this);
-
+           // LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.ic_Covid;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -33,6 +34,8 @@ namespace COVID.Droid
          
             
             LoadApplication(new App());
+
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
