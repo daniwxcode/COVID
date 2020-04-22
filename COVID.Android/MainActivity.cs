@@ -8,6 +8,7 @@ using Android.OS;
 using Xamarin.Forms.Svg.Droid;
 using MediaManager;
 using Plugin.CurrentActivity;
+using Matcha.BackgroundService.Droid;
 
 namespace COVID.Droid
 {
@@ -16,6 +17,9 @@ namespace COVID.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //Background Worker
+            BackgroundAggregator.Init(this);
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

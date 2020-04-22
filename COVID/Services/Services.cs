@@ -33,7 +33,7 @@ namespace COVID.Services
             return details.FirstOrDefault();
         }
 
-        private static void Save(this List<Details> json)
+        public static void Save(this List<Details> json)
         {
             Application.Current.Properties["post_data"] = JsonConvert.SerializeObject(json);
         }

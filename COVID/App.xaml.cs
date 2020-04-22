@@ -1,4 +1,6 @@
 ﻿using System;
+using COVID.Services;
+using Matcha.BackgroundService;
 using MediaManager;
 using Xamarin.Forms;
 using Xamarin.Forms.Svg;
@@ -11,7 +13,7 @@ namespace COVID
         public App()
         {
             InitializeComponent();
-           // CrossMediaManager.Current.Init();
+            // CrossMediaManager.Current.Init();
             SvgImageSource.RegisterAssembly();
 
             MainPage = new MainPage();
@@ -19,6 +21,10 @@ namespace COVID
 
         protected override void OnStart()
         {
+            //Register Periodic Tasks
+            BackgroundAggregatorService.Add(() => new BackGroundService(30));
+            //Start the background service
+            BackgroundAggregatorService.StartBackgroundService();
         }
 
         protected override void OnSleep()

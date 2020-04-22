@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
+using Matcha.BackgroundService.iOS;
 using MediaManager;
 using UIKit;
 
@@ -25,6 +26,7 @@ namespace COVID.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            BackgroundAggregator.Init(this);
 
             if (Window == null)
             {
