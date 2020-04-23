@@ -20,11 +20,9 @@ namespace COVID.Services
         public async Task<bool> StartJob()
         { 
             var localData = await Services.GetData();
-            CrossLocalNotifications.Current.Show("InfoCovid", "Nous Uploadons");
             var newData = await Covid19TgService.GetDetailsAsync();
             if (localData.InfosduJour().Date != newData.InfosduJour().Date)
             {
-
                 newData.Reverse();
                 foreach(var tmp in newData)
                 {
@@ -34,11 +32,11 @@ namespace COVID.Services
                     }
 
                 }
-               
+                CrossLocalNotifications.Current.Show("TOGO INFO COVID:", localData.InfosduJour().Info());
                 localData.Save();
             }
 
-             CrossLocalNotifications.Current.Show("title", localData.InfosduJour().Info());
+         
             return true; //return false when you want to stop or trigger only once
         }
     }

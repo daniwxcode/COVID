@@ -20,7 +20,7 @@ namespace COVID.Droid
         {
             //Background Worker
             BackgroundAggregator.Init(this);
-           // LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.ic_Covid;
+           LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.ic_Covid;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

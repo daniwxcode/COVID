@@ -22,7 +22,7 @@ namespace COVID
         protected override void OnStart()
         {
             //Register Periodic Tasks
-            BackgroundAggregatorService.Add(() => new BackGroundService(1));
+            BackgroundAggregatorService.Add(() => new BackGroundService(4));
             //Start the background service
             BackgroundAggregatorService.StartBackgroundService();
         }

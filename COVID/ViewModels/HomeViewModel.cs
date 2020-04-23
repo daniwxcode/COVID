@@ -78,11 +78,14 @@ namespace COVID.ViewModels
             CasConfirmes = Covid19TgService.InfosCovid.InfosduJour().Total;
             DateUpdate = Covid19TgService.InfosCovid.InfosduJour().Date;
 
+          
         }
 
         private void Appeler()
         {
+
             Covid19TgService.AppelNumeroVert();
+
         }
     }
 }
