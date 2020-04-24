@@ -35,7 +35,7 @@ namespace COVID.Services
                 var itemHtmlDetails = itemsections.FirstOrDefault().QuerySelectorAll("h2");
                 itemDetails.Date = $"{itemHtmlDetails[0].InnerHtml} à { itemHtmlDetails[1].InnerHtml}";
 
-                int i = 0;
+              
                 Stats itemStats = new Stats();
                 itemStats.ActiveCases = itemHtmlDetails[3].InnerHtml.GetInt();
                 itemStats.Cured = itemHtmlDetails[4].InnerHtml.GetInt();
