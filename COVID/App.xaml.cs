@@ -1,7 +1,6 @@
 ﻿using System;
 using COVID.Services;
 using Matcha.BackgroundService;
-using MediaManager;
 using Xamarin.Forms;
 using Xamarin.Forms.Svg;
 using Xamarin.Forms.Xaml;

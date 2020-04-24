@@ -148,9 +148,6 @@
     <PackageReference Include="Matcha.BackgroundService">
       <Version>1.0.5478</Version>
     </PackageReference>
-    <PackageReference Include="Plugin.MediaManager.Forms">
-      <Version>0.9.6</Version>
-    </PackageReference>
     <PackageReference Include="Xam.Plugins.Notifier">
       <Version>3.0.1</Version>
     </PackageReference>

@@ -1,12 +1,8 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Xamarin.Forms.Svg.Droid;
-using MediaManager;
 using Plugin.CurrentActivity;
 using Matcha.BackgroundService.Droid;
 using Plugin.LocalNotifications;
@@ -25,7 +21,6 @@ namespace COVID.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            CrossMediaManager.Current.Init();
 			CrossCurrentActivity.Current.Init(this, savedInstanceState);
             
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
