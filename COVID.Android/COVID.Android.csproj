@@ -57,7 +57,7 @@
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
-    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidKeyStore>false</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\daniel.woagou\AppData\Local\Xamarin\Mono for Android\Keystore\TogoCovid\TogoCovid.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>Lachacala1</AndroidSigningStorePass>
   </PropertyGroup>
