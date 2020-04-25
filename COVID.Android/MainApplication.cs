@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MediaManager;
 using Plugin.CurrentActivity;
 
 namespace COVID.Droid
@@ -17,19 +16,19 @@ namespace COVID.Droid
 #if DEBUG
 	[Application(Debuggable = true)]
 #else
-	[Application(Debuggable = false)]
+    [Application(Debuggable = false)]
 #endif
-	public class MainApplication : Application
-	{
-		public MainApplication(IntPtr handle, JniHandleOwnership transer)
-			: base(handle, transer)
-		{
-		}
+    public class MainApplication : Application
+    {
+        public MainApplication(IntPtr handle, JniHandleOwnership transer)
+            : base(handle, transer)
+        {
+        }
 
-		public override void OnCreate()
-		{
-			base.OnCreate();
-			
-		}
-	}
+        public override void OnCreate()
+        {
+            base.OnCreate();
+
+        }
+    }
 }

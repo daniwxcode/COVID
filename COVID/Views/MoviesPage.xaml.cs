@@ -1,12 +1,6 @@
 ﻿using COVID.Services;
-using MediaManager;
-using MediaManager.Video;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 using Xamarin.Forms.Xaml;
@@ -24,13 +18,12 @@ namespace COVID
         public MoviesPage()
         {
             InitializeComponent();
-           
+
             webView.Source = myvideos[0];
 
             FillInformation();
         }
 
-  
 
         private void FillInformation()
         {
@@ -100,7 +93,7 @@ namespace COVID
 
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
-           Covid19TgService.AppelNumeroVert();
+            Covid19TgService.AppelNumeroVert();
         }
     }
 }

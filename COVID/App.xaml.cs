@@ -1,7 +1,6 @@
 ﻿using System;
 using COVID.Services;
 using Matcha.BackgroundService;
-using MediaManager;
 using Xamarin.Forms;
 using Xamarin.Forms.Svg;
 using Xamarin.Forms.Xaml;
@@ -13,7 +12,7 @@ namespace COVID
         public App()
         {
             InitializeComponent();
-            // CrossMediaManager.Current.Init();
+
             SvgImageSource.RegisterAssembly();
 
             MainPage = new MainPage();
