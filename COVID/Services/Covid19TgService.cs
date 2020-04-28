@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AngleSharp;
 using COVID.Models;
@@ -13,10 +14,10 @@ namespace COVID.Services
     {
         public static void AppelNumeroVert()
         {
-             PhoneDialer.Open(Covid19TgService.NumeroVert);
+            PhoneDialer.Open(Covid19TgService.NumeroVert);
         }
-        public static string NumeroVert{get;set;}="111";
-        public static List<Details> InfosCovid{get;set;}
+        public static string NumeroVert { get; set; } = "111";
+        public static List<Details> InfosCovid { get; set; }
         public static async Task<List<Details>> GetDetailsAsync()
         {
             var config = Configuration.Default.WithDefaultLoader();
@@ -35,18 +36,15 @@ namespace COVID.Services
                 var itemHtmlDetails = itemsections.FirstOrDefault().QuerySelectorAll("h2");
                 itemDetails.Date = $"{itemHtmlDetails[0].InnerHtml} à { itemHtmlDetails[1].InnerHtml}";
 
-              
+
                 Stats itemStats = new Stats();
                 itemStats.ActiveCases = itemHtmlDetails[3].InnerHtml.GetInt();
                 itemStats.Cured = itemHtmlDetails[4].InnerHtml.GetInt();
                 itemStats.Deaths = itemHtmlDetails[5].InnerHtml.GetInt();
                 itemDetails.Stat = itemStats;
-                foreach (var history in itemsections[1].QuerySelectorAll("p"))
-                {
-                    itemDetails.Histoire += $"\n{history.InnerHtml}";
-                }
+                itemDetails.Histoire = Regex.Replace(itemsections[1].TextContent, @"^[\s\t\n]+|[\s\t\n]+$", "");
+                itemDetails.Histoire = Regex.Replace(itemDetails.Histoire, @"<[^>]+>|&nbsp;", "").Trim();
                 details.Add(itemDetails);
-
             }
 
             return details;
