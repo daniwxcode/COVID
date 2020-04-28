@@ -1,6 +1,7 @@
 ﻿using COVID.Services;
 using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 using Xamarin.Forms.Xaml;
@@ -93,7 +94,7 @@ namespace COVID
 
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
-            Covid19TgService.AppelNumeroVert();
+             PhoneDialer.Open("111");
         }
     }
 }

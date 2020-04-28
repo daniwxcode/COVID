@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Matcha.BackgroundService;
 using Plugin.LocalNotifications;
+using TgCovidStats.Data;
 
 namespace COVID.Services
 {
@@ -19,21 +18,21 @@ namespace COVID.Services
 
         public async Task<bool> StartJob()
         { 
-            var localData = await Services.GetData();
-            var newData = await Covid19TgService.GetDetailsAsync();
-            if (localData.InfosduJour().Date != newData.InfosduJour().Date)
+            var localData = await TgCovidStats.Get.LocalDetailsAsync();
+            var newData = await TgCovidStats.Get.DetailsAsync();
+            if (localData.FirstOrDefault().Stat.TimeInfo != newData.FirstOrDefault().Stat.TimeInfo)
             {
                 newData.Reverse();
                 foreach(var tmp in newData)
                 {
-                    if (localData.All(p => p.Date != tmp.Date))
+                    if (localData.All(p => p.Stat.TimeInfo != tmp.Stat.TimeInfo))
                     {
                         localData.Insert(0,tmp);
                     }
 
                 }
                 CrossLocalNotifications.Current.Show("TOGO INFO COVID:", localData.InfosduJour().Info());
-                localData.Save();
+                localData.SaveDetails();
             }
 
          

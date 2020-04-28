@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using COVID.Services;
-using NScrape;
-using NScrape.Forms;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace COVID.ViewModels
@@ -71,21 +65,17 @@ namespace COVID.ViewModels
 
         async Task GetDetails()
         {
-            Covid19TgService.InfosCovid= await Services.Services.GetData();           
-            CasActifs = Covid19TgService.InfosCovid.InfosduJour().ActiveCases;
-            CasGueris = Covid19TgService.InfosCovid.InfosduJour().Cured;
-            Deces = Covid19TgService.InfosCovid.InfosduJour().Deaths;
-            CasConfirmes = Covid19TgService.InfosCovid.InfosduJour().Total;
-            DateUpdate = Covid19TgService.InfosCovid.InfosduJour().Date;
-
-          
+            var infos = await TgCovidStats.Get.LocalStatAsync();
+            CasActifs = infos.ActiveCases.ToString();
+            CasGueris = infos.Cured.ToString();
+            Deces = infos.Deaths.ToString();
+            CasConfirmes = infos.Total.ToString();
+            DateUpdate = infos.TimeInfo.ToString();
         }
 
         private void Appeler()
         {
-
-            Covid19TgService.AppelNumeroVert();
-
+            PhoneDialer.Open("111");
         }
     }
 }

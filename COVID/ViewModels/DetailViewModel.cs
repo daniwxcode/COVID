@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using COVID.Models;
-using COVID.Services;
+using TgCovidStats.Model;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace COVID.ViewModels
@@ -65,13 +63,13 @@ namespace COVID.ViewModels
 
         private async Task GetDetailsAsync()
         {
-           Covid19TgService.InfosCovid= await Services.Services.GetData();
-            LeDetails = Covid19TgService.InfosCovid;
+         LeDetails = await TgCovidStats.Get.LocalDetailsAsync();
+       
         }
 
         private void Appeler()
         {
-            Covid19TgService.AppelNumeroVert();
+             PhoneDialer.Open("111");
         }
 
     }
