@@ -43,8 +43,8 @@ namespace COVID.Services
         private static string ReadData()
         {
             var strin = Application.Current.Properties["post_data"].ToString();
-
-            return strin;
+            strin = Regex.Replace(strin, @"<[^>]+>|&nbsp;", "").Trim();
+            return Regex.Replace(strin, @"\s{2,}", " "); ;
         }
         public static async Task<List<Details>> GetData()
         {

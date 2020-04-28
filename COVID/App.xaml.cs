@@ -12,7 +12,7 @@ namespace COVID
         public App()
         {
             InitializeComponent();
-            // CrossMediaManager.Current.Init();
+
             SvgImageSource.RegisterAssembly();
 
             MainPage = new MainPage();
