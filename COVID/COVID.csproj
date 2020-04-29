@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\DataService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="SVGResources\cas_actifs.svg" />
     <None Remove="SVGResources\cas_confirmés.svg" />
     <None Remove="SVGResources\deces.svg" />
